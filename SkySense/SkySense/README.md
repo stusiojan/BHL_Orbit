@@ -1,4 +1,4 @@
-#  Demo app
+#  SkySense Demo
 
 For demo purpuses star posisions are mocked in `data.swift` and audio_files in `Resources/`
 
