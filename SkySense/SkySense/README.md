@@ -9,6 +9,18 @@ Otherwise we would use ours sercives to get:
 
 So user can get informative answer to every question that occurs.
 
+## Architecture
+
+We used MVVM, which is common choise for scalable and testable apps.
+
+We store data models and mock data in `Models` directory
+
+`Views` holds all view rendering logic
+
+View Model part of MVVM is represented here by `Managers` and `Services`(where would API calls to our python services: RAG, speach-to-text, text-to-speach and star posisions)
+
+UI and Unit test would be in a different target called SkySenseTests
+
 
 ## Launch
 

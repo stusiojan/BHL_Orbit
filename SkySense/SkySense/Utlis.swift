@@ -7,7 +7,7 @@
 
 import CoreLocation
 import SceneKit
- 
+
 struct Utilities {
 
     static let referenceEpoch: Double = 2000.0

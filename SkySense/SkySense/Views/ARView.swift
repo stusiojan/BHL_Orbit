@@ -10,6 +10,7 @@ import ARKit
 import CoreLocation
 import RealityKit
 
+/// Holds AR view with rendered stars
 struct ARViewContainer: UIViewRepresentable {
     
     var location: CLLocation?
