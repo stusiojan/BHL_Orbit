@@ -17,7 +17,7 @@ We store data models and mock data in `Models` directory
 
 `Views` holds all view rendering logic
 
-View Model part of MVVM is represented here by `Managers` and `Services`(where would API calls to our python services: RAG, speach-to-text, text-to-speach and star posisions)
+View Model part of MVVM is represented here by `Managers` and `Services` - where would API calls to our python services: RAG, speach-to-text, text-to-speach and star posisions. We have created two of them with fastAPI, skyfield for star position data, elevenLabs for audio processing
 
 UI and Unit test would be in a different target called SkySenseTests
 
