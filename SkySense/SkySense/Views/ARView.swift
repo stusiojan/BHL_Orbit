@@ -48,17 +48,20 @@ struct ARViewContainer: UIViewRepresentable {
             for star in stars {
                 let position = Utilities.calculatePosition(star: star, userLocation: CLLocation(latitude: 0, longitude: 0), currentTime: Date())
                 
-                // Create a node for the star (e.g., a sphere or text)
-                let sphere = SCNSphere(radius: 0.5) // Adjust radius as needed
-                sphere.firstMaterial?.diffuse.contents = UIColor.yellow // Adjust color as needed
+                // Create a node for the star
+                var sphereRadius: Double = 0.5
+                position.y > 150 ? (sphereRadius *= Double(position.y/1000)) : (sphereRadius = 0.5)
+                
+                let sphere = SCNSphere(radius: sphereRadius)
+                sphere.firstMaterial?.diffuse.contents = UIColor.yellow
                 let starNode = SCNNode(geometry: sphere)
                 
                 // Add a label to the star
                 let textGeometry = SCNText(string: star.name, extrusionDepth: 0.1)
                 textGeometry.firstMaterial?.diffuse.contents = UIColor.white
                 let textNode = SCNNode(geometry: textGeometry)
-                textNode.scale = SCNVector3(1, 1, 1) // Adjust scale as needed
-                textNode.position = SCNVector3(0, -1, 0) // Adjust label position as needed
+                textNode.scale = SCNVector3(0.1, 0.1, 0.1)
+                textNode.position = SCNVector3(0, -1, 0)
                 
                 starNode.addChildNode(textNode)
                 starNode.position = position
